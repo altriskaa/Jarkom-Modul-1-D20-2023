@@ -34,13 +34,16 @@ Untuk melihat sequence number dari paket response, pertama buka paket yang sesua
 aknowledge number dari paket response ada dibawah sequence number nya.    
 ![1d](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/56571284/64d90b19-660b-40c2-a1ce-214b9af8856f)  
 
+### Bukti Flag  
+![flag1](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/56571284/6ee38867-485d-4fbc-ae6d-7c70d6622ff3)  
+
 ## Soal 2
 Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
 ### Penyelesaian
 - Klik kanan pada paket dengan source yang digunakan portal praktikum Jaringan Komputer
 - Klik “follow” -> “HTTP Stream”
 - Bisa dilihat server yang digunakan adalah `gunicorn`
-![soal2](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/114663340/0c9199fe-05ef-4fb9-b9c8-625b0bd5272b)
+![soal2](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/114663340/0c9199fe-05ef-4fb9-b9c8-625b0bd5272b)  
 ### Bukti Flag
 ![soal2flag](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/114663340/b46a5b10-7367-48b9-92ca-bf461c562a91)
 
@@ -59,6 +62,9 @@ Jumlah paket setelah dihitung ada 21 paket
 > Protokol layer transport apa yang digunakan? 
 
 Port 3702 merupakan tipe port UDP 
+
+### Bukti Flag  
+![flag3](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/56571284/55b5f6f1-f643-4b64-94ea-7a6cb92d208c)  
 
 ## Soal 4
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?
@@ -115,6 +121,8 @@ Atur display filter dengan query `ip.dst == 184.87.193.88`
  ![7](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/56571284/6b137549-8190-4fd9-853d-37016286319f)  
 Terdapat 6 paket yang menuju IP tersebut  
 
+### Bukti Flag  
+![flag7](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/56571284/8458e0be-9b9a-45b8-aa90-fab911e7b487)  
 ## Soal 8
 Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)
 ### Penyelesaian
@@ -126,7 +134,10 @@ Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yan
 ## Soal 9
 Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!
 ### Penyelesaian  
-Kueri yang sesuai untuk soal ini adalah `ip.src == 10.51.40.1 && ip.dst != 10.39.55.34`
+Kueri yang sesuai untuk soal ini adalah `ip.src == 10.51.40.1 && ip.dst != 10.39.55.34`  
+
+### Bukti Flag  
+![flag9](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/56571284/da5181be-eb17-409d-9ff5-1f2634daad67)  
 
 ## Soal 10
 Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet
