@@ -8,12 +8,31 @@ NRP | Nama |
 
 ## Soal 1
 User melakukan berbagai aktivitas dengan menggunakan protokol FTP. Salah satunya adalah mengunggah suatu file.
-a. Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut?
-b. Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut?
-c. Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
-d. Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
+a. Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut?  
+b. Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut?  
+c. Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?  
+d. Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?  
 ### Penyelesaian
-### Bukti Flag
+Untuk mengerjakan soal ini, pertama atur display filter menjadi FTP untuk memudahkan pencarian. Kemudian cari paket yang terdapat 'STOR' yang menandakan user mengupload file. Paket yang sesuai adalah paket 147 dan responnya ada di paket 149 
+![1](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/56571284/840ccf47-636b-4b96-9e6d-1b40c9e884b1)    
+> Berapakah sequence number (raw) pada packet yang menunjukkan aktivitas tersebut?
+
+Sequence number dapat dilihat pada 'Transmission Control Protocol'  
+![1a](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/56571284/921cec96-0533-4b13-a830-8a3da07a48db)   
+> Berapakah acknowledge number (raw) pada packet yang menunjukkan aktivitas tersebut? 
+
+Aknowdledge number juga ada pada 'Transmission Control Protocol'  
+![1b](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/56571284/46b1b771-b2fe-468e-b312-2eb2e80f4568)  
+
+> Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?  
+
+Untuk melihat sequence number dari paket response, pertama buka paket yang sesuai, yaitu 149, lalu buka 'Transmission Control Protocol', akan terlihat sequence number  
+![1c](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/56571284/2d350cec-8102-4fc9-a942-845a64531da5)  
+
+> Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?   
+
+aknowledge number dari paket response ada dibawah sequence number nya.    
+![1d](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/56571284/64d90b19-660b-40c2-a1ce-214b9af8856f)  
 
 ## Soal 2
 Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
@@ -27,11 +46,19 @@ Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
 
 
 ## Soal 3
-Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal berikut:
-a. Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702?
-b. Protokol layer transport apa yang digunakan?
-Penyelesaian
-### Bukti Flag
+Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal berikut:  
+a. Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702?  
+b. Protokol layer transport apa yang digunakan?  
+
+### Penyelesaian  
+Atur display filter menjadi `ip.addr == 239.255.255.250 and udp.port == 3702`  
+![3](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/56571284/01e91a5f-274b-4025-b402-e33f933b21bc)    
+> Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702?  
+
+Jumlah paket setelah dihitung ada 21 paket  
+> Protokol layer transport apa yang digunakan? 
+
+Port 3702 merupakan tipe port UDP 
 
 ## Soal 4
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?
@@ -83,8 +110,10 @@ Hint :
 
 ## Soal 7
 Berapa jumlah packet yang menuju IP 184.87.193.88?
-### Penyelesaian
-### Bukti Flag
+### Penyelesaian  
+Atur display filter dengan query `ip.dst == 184.87.193.88`  
+ ![7](https://github.com/altriskaa/Jarkom-Modul-1-D20-2023/assets/56571284/6b137549-8190-4fd9-853d-37016286319f)  
+Terdapat 6 paket yang menuju IP tersebut  
 
 ## Soal 8
 Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)
@@ -96,8 +125,8 @@ Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yan
 
 ## Soal 9
 Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!
-### Penyelesaian
-### Bukti Flag
+### Penyelesaian  
+Kueri yang sesuai untuk soal ini adalah `ip.src == 10.51.40.1 && ip.dst != 10.39.55.34`
 
 ## Soal 10
 Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet
